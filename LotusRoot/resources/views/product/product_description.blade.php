@@ -171,7 +171,10 @@
 			.then(response => response.json())
 			.then(data => {
 				if (data.success) {
-					alert("商品已成功加入購物車！");
+					Toast.fire({
+							icon: "success",
+							title: "加入購物車成功"
+					});
 				} else if (!data.success) {
 					alert(data.message);
 					console.log(data.message);

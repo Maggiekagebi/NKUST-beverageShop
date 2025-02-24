@@ -183,6 +183,7 @@
             });
         });
     });
+    
 
     //更改大小杯時，更新購物車
     document.querySelectorAll(".size-selector").forEach(selector => {

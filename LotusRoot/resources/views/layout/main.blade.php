@@ -36,6 +36,7 @@
 		<script src="{{ asset('/assets/js/WOW-master/dist/wow.min.js') }}"></script>
 		<script src="{{ asset('/assets/js/LineProgressbar-master/jquery.lineProgressbar.js') }}"></script>
 		<script src="{{ asset('/assets/js/ui-main/dist/fancybox/fancybox.umd.js') }}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script>
 			new WOW().init();
 			// 關於
@@ -61,6 +62,19 @@
 			});
 			// 燈箱
 			Fancybox.bind("[data-fancybox]", {});
+		</script>
+		<script>
+			const Toast = Swal.mixin({
+				toast: true,
+				position: "top-end",
+				showConfirmButton: false,
+				timer: 3000,
+				timerProgressBar: true,
+				didOpen: (toast) => {
+					toast.onmouseenter = Swal.stopTimer;
+					toast.onmouseleave = Swal.resumeTimer;
+				}
+			});
 		</script>
 		<!-- 分類、過濾 -->
 		<script src="{{ asset('/assets/js/filterizr-master/dist/jquery.filterizr.min.js') }}"></script>
@@ -144,7 +158,10 @@
 					.then(response => response.json())
 					.then(data => {
 						if (data.success) {
-							alert("商品已成功加入購物車！");
+							Toast.fire({
+							icon: "success",
+							title: "加入購物車成功"
+							});
 						} else if (data.success === false) {
 							alert(data.message);
 						} else {
@@ -212,6 +229,7 @@
 			alert("{{ session('success_message') }}")
 		</script>
 		@endif
+		
 	</body>
 </html>
 

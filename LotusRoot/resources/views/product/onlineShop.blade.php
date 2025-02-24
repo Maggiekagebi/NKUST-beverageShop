@@ -114,4 +114,5 @@
         </div>
     </div>
 </article>
+<script>
 @endsection
