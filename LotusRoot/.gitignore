@@ -6,6 +6,8 @@
 /storage/*.key
 /storage/pail
 /vendor
+docker/mysql/my.cnf
+docker/nginx/default.conf
 .env
 .env.backup
 .env.production
@@ -22,3 +24,5 @@ yarn-error.log
 /.vscode
 /.zed
 .DB_Store
+/entrypoint.sh
+LotusRoot/config/services.php
