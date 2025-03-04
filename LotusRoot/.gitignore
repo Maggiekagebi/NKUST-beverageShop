@@ -25,4 +25,4 @@ yarn-error.log
 /.zed
 .DB_Store
 /entrypoint.sh
-LotusRoot/config/services.php
+config/services.php
